@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "esnext",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "declaration": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts"]
+}
