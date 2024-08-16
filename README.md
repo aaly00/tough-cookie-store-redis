@@ -20,10 +20,10 @@ npm install --save @aaly00/tough-cookie-store-redis
 
 ## Usage
 
-```js
-const { createClient } = require('redis');
-const { CookieJar } = require('tough-cookie');
-const { RedisCookieStore } = require('@aaly00/tough-cookie-store-redis');
+```ts
+import { createClient } from 'redis';
+import { CookieJar } from 'tough-cookie';
+import { RedisCookieStore } from "@amraly/tough-cookie-store-redis"
 
 const client = createClient();
 
