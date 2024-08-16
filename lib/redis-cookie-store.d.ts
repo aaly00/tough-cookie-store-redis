@@ -2,8 +2,8 @@ import { Store, Cookie } from "tough-cookie";
 interface MinimalRedisClient {
     isReady: boolean;
     on(event: string, listener: (err: Error) => void): this;
-    connect(): Promise<void>;
-    hGet(key: string, field: string): Promise<string | null>;
+    connect(): Promise<MinimalRedisClient>;
+    hGet(key: string, field: string): Promise<string | undefined | null>;
     hSet(key: string, field: string, value: string): Promise<number>;
     hDel(key: string, field: string): Promise<number>;
     hGetAll(key: string): Promise<Record<string, string>>;
