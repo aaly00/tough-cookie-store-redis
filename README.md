@@ -4,6 +4,8 @@ a Redis store for tough-cookie module.
 See [tough-cookie documentation](https://github.com/goinstant/tough-cookie#constructionstore--new-memorycookiestore-rejectpublicsuffixes)
 for more info.
 
+This package is forked from <https://github.com/benkroeger/redis-cookie-store> and provides various improvements.
+
 ## Installation
 
 ```sh
