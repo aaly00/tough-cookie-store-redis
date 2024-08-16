@@ -1,5 +1,4 @@
 import { Store, Cookie } from "tough-cookie";
-import type { RedisClientType } from "redis";
 interface MinimalRedisClient {
     isReady: boolean;
     on(event: string, listener: (err: Error) => void): this;
@@ -17,12 +16,11 @@ interface MinimalRedisClient {
         keys: string[];
     }>;
 }
-type RedisClient = RedisClientType<Record<string, never>, Record<string, never>> | MinimalRedisClient;
 export declare class RedisCookieStore extends Store {
     id: string | undefined;
-    client: RedisClient;
+    client: MinimalRedisClient;
     idx: Record<string, any> | undefined;
-    constructor(redisClient: RedisClient, id?: string);
+    constructor(redisClient: MinimalRedisClient, id?: string);
     getKeyName(domain: string, path?: string): string;
     findCookie(domain: string, path: string, key: string, cb: (err: Error | null, cookie: Cookie | null) => void): Promise<void>;
     findCookies(domain: string, path: string, allowSpecialUseDomain: boolean, cb: (err: Error | null, cookie: Cookie[]) => void): Promise<void>;
