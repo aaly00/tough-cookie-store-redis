@@ -7,7 +7,7 @@ for more info.
 ## Installation
 
 ```sh
-npm install --save @aaly00/tough-cookie-redis-store
+npm install --save @aaly00/tough-cookie-store-redis
 ```
 
 ## Options
@@ -21,7 +21,7 @@ npm install --save @aaly00/tough-cookie-redis-store
 ```js
 const { createClient } = require('redis');
 const { CookieJar } = require('tough-cookie');
-const { RedisCookieStore } = require('@aaly00/tough-cookie-redis-store');
+const { RedisCookieStore } = require('@aaly00/tough-cookie-store-redis');
 
 const client = createClient();
 
