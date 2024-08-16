@@ -18,14 +18,13 @@ interface MinimalRedisClient {
   ): Promise<{ cursor: number; keys: string[] }>;
 }
 
-type RedisClient = RedisClientType<Record<string, never>, Record<string, never>> | MinimalRedisClient; 
 
 export class RedisCookieStore extends Store {
   id: string | undefined;
-  client: RedisClient;
+  client: MinimalRedisClient;
   idx: Record<string, any> | undefined;
 
-  constructor(redisClient: RedisClient, id?: string) {
+  constructor(redisClient: MinimalRedisClient, id?: string) {
     super();
     const self = this;
     self.idx = {};
