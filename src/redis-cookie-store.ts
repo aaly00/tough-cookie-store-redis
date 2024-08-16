@@ -1,5 +1,4 @@
 import { Store, permuteDomain, permutePath, Cookie } from "tough-cookie";
-import type { RedisClientType } from "redis";
 import { sortBy } from "lodash";
 
 // Define a minimal Redis client interface with only the necessary methods
