@@ -34,6 +34,10 @@ export class RedisCookieStore extends Store {
         .on("error", (err) => console.log("Redis Client Error", err))
         .connect()
         .catch((err) => {
+          // Ignore "Socket already opened" errors since multiple instances might try to connect
+          if (err.message && err.message.includes("Socket already opened")) {
+            return; // Silently ignore this specific error
+          }
           console.log("Redis Connect Error", err);
           process.exit(1);
         });
