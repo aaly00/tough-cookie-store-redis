@@ -31,7 +31,6 @@ export class RedisCookieStore extends Store {
     self.synchronous = false;
     if (!redisClient.isReady) {
       redisClient
-        .on("error", (err) => console.log("Redis Client Error", err))
         .connect()
         .catch((err) => {
           // Ignore "Socket already opened" errors since multiple instances might try to connect
